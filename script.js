@@ -40,3 +40,80 @@
 // Note: For tasks 5, 6, and 7, you can use the existing HTML elements with the IDs 'myButton' and 'parentElementId' in the HTML document.
 
 // Remember to use the 'function' keyword to define your functions, and use 'console.log' to log the results. Good luck!
+
+function greet(name) {
+    console.log('Hello, ' + name + '!');
+}
+
+greet('Ethan');
+
+
+function calculateSum(a, b) {
+    return a + b;
+}
+
+let result = calculateSum(5, 10);
+console.log(result);
+
+
+function outerFunction() {
+    let x = 10;
+
+    function innerFunction() {
+        console.log(x);
+    }
+
+    innerFunction();
+}
+
+outerFunction();
+
+
+function outerFunctionTwo() {
+    let x = 10;
+
+    function innerFunctionTwo() {
+        console.log(x);
+    }
+
+    return innerFunctionTwo;
+}
+
+let closure = outerFunctionTwo();
+closure();
+
+
+const button = document.querySelector('#myButton');
+
+function handleClick(event) {
+    console.log('Button clicked!');
+    console.log('Event type:', event.type);
+    console.log('Target element:', event.target);
+}
+
+button.addEventListener('click', handleClick);
+
+
+function handleClickStopPropagation(event) {
+    event.stopPropagation();
+    console.log('Button clicked!');
+    console.log('Event type:', event.type);
+    console.log('Target element:', event.target);
+}
+
+button.addEventListener('click', handleClickStopPropagation);
+
+
+function createNewElement() {
+    const newElement = document.createElement('div');
+    newElement.className = 'myClass';
+    newElement.innerHTML = 'New element';
+
+    const parentElement = document.getElementById('parentElementId');
+    parentElement.appendChild(newElement)
+    newElement.addEventListener('mouseover', function () {
+        console.log('Mouse over new element!');
+    });
+}
+
+createNewElement();
